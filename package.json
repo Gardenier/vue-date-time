@@ -1,0 +1,14 @@
+{
+  "name": "vue-date-time",
+  "description": "A new project",
+  "main": "src/datetimepicker.vue",
+  "version": "1.2.2",
+  "scripts": {
+    "start": "wag start",
+    "test": "wag test"
+  },
+  "devDependencies": {
+    "wag-cli": "^3.2.6",
+    "vue": "^2.3.2"
+  }
+}

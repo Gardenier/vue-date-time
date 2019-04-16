@@ -1,37 +1,59 @@
-# vue-date-time
+###Install
 
-#### 介绍
-时间组件---日期选择、时间选择
-
-#### 软件架构
-软件架构说明
+`npm install vue-date-time`
 
 
-#### 安装教程
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
-
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+###Use
 
 
-#### 码云特技
+######单独的日期组件
 
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+`import Datepicker from 'vue-date-time/src/datepicker.vue`
+<br/>
+`<Datepicker>  slot  </Datepicker>`
+<br/>
+*slot处为可设置内容，取代的默认的输入框部分*
+
+######单独的时间组件
+
+`import Timepicker from 'vue-date-time/src/timepicker.vue`
+<br/>
+`<Timepicker>  slot </Timepicker>`
+<br/>
+*slot处为可设置内容，取代的默认的输入框部分*
+
+######带时间的日期组件
+
+`import Datetimepicker from 'vue-date-time/src/datetimepicker.vue`
+<br/>
+`<Datetimepicker type='datetime'></Datetimepicker>`
+
+###配置项
+
+
+#####基本
+
+| 配置项      |类型      | 默认值      | 可选项                                                         | 说明|
+| :--------- | :-----: | :--------: | :-----------------------------------------------------------: | :---- |
+|value       |String   |‘ ’         |-                                                              |需要设置默认日期时设置 |
+|time        |String   |‘ ’         |-                                                              |需要设置默认时间时设置|
+| format     | String  | yyyy/mm/dd | yyyy-mm-dd <br/> yyyy/mm/dd <br/> dd/mm/yyyy <br/> dd-mm-yyyy |日期格式|
+| pastDue    |  Boolean| true       | true <br/> false                                              |设置过期日期 |
+|isTimePast  |Boolean  | false      | true <br/> false                                              | 设置过期时间 <br/> *小于当前时间的选项不可选*|
+|minLimitDate|  String | ' '        | -                                                             |最小日期|
+|maxLimitDate| String  |‘ ’         | -                                                             |最大日期|
+|isDateBtn   | Boolean | true       |    true <br/> false                                           |显示底部‘今天’‘清空’按钮|
+|isTimeBtn   | Boolean |true        |    true <br/> false                                           | 显示底部‘清空’按钮|
+|isTodayBtn  | Boolean | true       |    true <br/> false                                           | 显示'今天' 按钮|
+|isCleatBtn  | Boolean | true       |    true <br/> false                                           | 显示 '清空' 按钮 |
+
+#####日期时间组件的特殊配置项
+
+| 配置项 | 类型 | 默认值   | 可选项                                        |说明 |
+| :---- | :--:| :-:     | :------------------------------------------: | :-- |
+|type   |String|datetime|datetime <br/> daterange <br/> date <br/> time| 组件类型<br/>*datetime为时间日期;<br/>daterange 为日期范围;<br/>date 为只显示日期；<br/>Time 为只显示时间；<br/> **特殊说明:若只是单独引用日期组件或者时间组件，该项可以省略***|
+|site   |String|left    |left <br/> right                              |显示的位置<br/>*left:下拉框和输入框左侧对齐<br/>right:下拉和输入框右侧对齐*|
+
+
+
+
