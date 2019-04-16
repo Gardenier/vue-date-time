@@ -1,0 +1,37 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
+    "es2015",
+    "stage-0"
+  ],
+  "plugins": ["transform-vue-jsx", "syntax-dynamic-import", [
+    "transform-runtime",
+    {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true,
+      "moduleName": "babel-runtime"
+    }
+  ]],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "istanbul",
+          {
+            "exclude": [
+              "test",
+              "pages/hub-orientation/src/date-picker"
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}
+
