@@ -1,0 +1,145 @@
+@import "lib.styl"
+.date-table{
+  font-size font
+  width WIDTH
+  text-align center
+  background-color: #ffffff;
+  display: inline-block
+  border_box()
+  padding: 0 8px;
+  &.is-right {
+    border-left: 1px solid #f1f1f1;
+  }
+  .calendar-mon{
+    padding 16px;
+    height: 48px;
+    border_box()
+    i {
+      float left
+      display inline-block
+      font-style normal
+      font-weight bold
+      cursor pointer
+      width 16px
+      height 16px
+      background-image IMG
+      position relative
+      top 2px
+      background_sizing(15px 170px)
+      background-repeat:no-repeat
+      &.prev-year {
+        background-position 0px -56px
+        margin-right: 12px;
+        &:hover {
+          background-position 0px -39px
+        }
+      }
+      &.prev-mon {
+        background-position 3px -124px
+        &:hover {
+          background-position 3px -107px
+        }
+      }
+      &.next-mon{
+        background-position 3px -158px
+        margin-right: 12px;
+        &:hover {
+          background-position 3px -141px
+        }
+      }
+      &.next-year{
+        background-position 0 -90px;
+        &:hover {
+          background-position 0px -73px
+        }
+      }
+    }
+    &>span{
+      float: left;
+      margin-top: -2px;
+      font-size: 14px;
+      display inline-block
+      width 118px
+    }
+  }
+  .calendar-box {
+    width: 224px;
+    margin: 0 auto;
+    padding-top: 7px;
+    margin-bottom: 8px;
+  }
+  .calendar-week {
+    width: 100%;
+    height: 18px;
+    margin: 0 auto;
+    line-height 18px
+    display table
+    margin-bottom 7px
+    .week {
+      display table-cell
+      text-align center
+      color: #959595
+    }
+  }
+  .calendar-days{
+    width: 100%;
+    margin 0 auto
+    tr{
+      height: 32px;
+    }
+    td {
+      margin 0
+      padding 0
+      border_box()
+      text-align center
+      color #c5c5c5
+      &.inrange {
+        background-color: rgba(49,108,203,.2)
+        &.isstart,&.isend {
+          background-color: #316ccb;
+          color: #ffffff;
+        }
+        &.today {
+          background-color: rgba(49,108,203,.2)
+          &.isstart,&.isend {
+            background-color: #316ccb;
+            color: #ffffff;
+          }
+        }
+      }
+      &.select {
+        color #656565
+        cursor pointer
+        &:hover {
+          transition(all 0.2s)
+          background-color COLOR_GRAY
+        }
+        &.current {
+          background-color COLOR_Blue
+          color COLOR_White
+          &:hover {
+            background-color COLOR_Blue
+            color COLOR_White
+          }
+        }
+      }
+      &.pastdue {
+        //cursor: not-allowed
+        cursor: default
+      }
+      &.today {
+        color: #316ccb;
+        background-color COLOR_White
+      }
+      &.active {
+        background-color COLOR_Blue
+        color COLOR_White
+        &:hover {
+          background-color COLOR_Blue
+          color COLOR_White
+        }
+      }
+
+    }
+  }
+}
